@@ -1,11 +1,11 @@
 
 FFLAGS = 
 
-.PHONY all run
+.PHONY: all run
 
 all: run
 
 run:
-	matlab -batch "test"
+	matlab -batch "hello"
 
 
