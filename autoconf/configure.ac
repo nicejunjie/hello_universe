@@ -15,12 +15,6 @@ AC_PROG_FC
 # Enable cross-compilation
 AC_CANONICAL_HOST
 
-# Check if we're cross-compiling
-AS_IF([test "x$cross_compiling" = xyes],
-  [AC_MSG_NOTICE([Cross-compiling for $host])],
-  [AC_MSG_NOTICE([Native compilation])])
-
-
 # Check for C compiler
 AC_PROG_CC
 AS_IF([test "x$ac_cv_prog_cc_c99" = xno],
@@ -33,7 +27,7 @@ AC_FC_LIBRARY_LDFLAGS
 # Set default FCFLAGS based on compiler name
 AC_MSG_CHECKING([whether to add compiler-specific FCFLAGS])
 case "$FC" in
-  *nvfortran* | *pgf90*)
+  *nvfortran* | *pgf90* | *pgfortran*)
     FCFLAGS="$FCFLAGS -Mnomain"
     AC_MSG_RESULT([yes, added -Mnomain for NVIDIA HPC SDK])
     ;;
