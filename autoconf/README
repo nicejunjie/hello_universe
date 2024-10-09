@@ -1,0 +1,5 @@
+# simple example compiling mix C/Fortran code
+
+autoreconf -i
+./configure 
+make
