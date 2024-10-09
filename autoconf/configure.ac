@@ -1,5 +1,9 @@
 # configure.ac
 
+# Disable the _AC_PROG_FC_V macro  to get around -v or -### triggered bug
+#AC_DEFUN([_AC_PROG_FC_V], [])
+
+
 # Initialize autoconf
 AC_INIT([myproject], [1.0], [your@email.com])
 AC_CONFIG_SRCDIR([src/main.c])
